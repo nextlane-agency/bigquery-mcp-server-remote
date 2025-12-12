@@ -1,0 +1,40 @@
+# tools.yaml
+
+sources:
+  my-bigquery-source:
+    kind: bigquery
+    project: YOUR_PROJECT_ID
+    location: YOUR_LOCATION
+
+tools:
+  ask_data_insights:
+    kind: bigquery-conversational-analytics
+    source: my-bigquery-source
+    description: |
+      Use this tool to perform data analysis, get insights,
+      or answer complex questions about specific BigQuery tables.
+
+  get_table_info:
+    kind: bigquery-get-table-info
+    source: my-bigquery-source
+    description: |
+      Get schema and metadata for a specific BigQuery table.
+
+  get_dataset_info:
+    kind: bigquery-get-dataset-info
+    source: my-bigquery-source
+    description: |
+      Get metadata and basic information about a BigQuery dataset.
+
+  execute_sql:
+    kind: bigquery-execute-sql
+    source: my-bigquery-source
+    description: |
+      Execute a SQL query against BigQuery and return the results.
+
+toolsets:
+  default:
+    - ask_data_insights
+    - get_table_info
+    - get_dataset_info
+    - execute_sql
