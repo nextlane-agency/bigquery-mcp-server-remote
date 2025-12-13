@@ -111,7 +111,7 @@ This project implements a Model Context Protocol (MCP) server for BigQuery, allo
     **Example Response:**
     ```json
     {
-      "answer": "Here are 10 random zip codes from the `school_location` table: 13210-1687, 40422-1394, 85283, 04106-1698, 46805, 90301-2904, 76904, 52803-2898, 33033-1412, 77477-0000\\n\\nSQL used:\\n```sql\\nSELECT DISTINCT zip FROM `long-arcadia-475313-s8.ADKPractice.school_location` ORDER BY RAND() LIMIT 10\\n```",
+      "answer": "Here are 10 random zip codes from the `school_location` table: 13210-1687, 40422-1394, 85283, 04106-1698, 46805, 90301-2904, 76904, 52803-2898, 33033-1412, 77477-0000\\n\\nSQL used:\\n```sql\\nSELECT DISTINCT zip FROM `project_id.dataset.school_location.school_location` ORDER BY RAND() LIMIT 10\\n```",
       "sql": "SELECT DISTINCT zip FROM `project_id.dataset.school_location` ORDER BY RAND() LIMIT 10"
     }
     ```
