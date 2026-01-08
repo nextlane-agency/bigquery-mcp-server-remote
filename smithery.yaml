@@ -1,0 +1,18 @@
+# smithery.yaml
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      gcpProjectId:
+        type: string
+        description: "Je Google Cloud Project ID"
+  commandFunction: |-
+    (config) => ({
+      command: 'python',
+      args: ['main.py'],
+      env: {
+        GCP_PROJECT_ID: config.gcpProjectId || process.env.GCP_PROJECT_ID,
+        GOOGLE_APPLICATION_CREDENTIALS_JSON: process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON
+      }
+    })
