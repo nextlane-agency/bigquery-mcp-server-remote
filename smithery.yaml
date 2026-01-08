@@ -1,6 +1,6 @@
 # smithery.yaml
 startCommand:
-  type: stdio
+  type: http
   configSchema:
     type: object
     properties:
